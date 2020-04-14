@@ -760,83 +760,85 @@ public class GetInfoTest {
 		}
 	}
 
-	/**
+		/**
 	 * Test IllegalArgumentException for missing uniq for trusted device info
 	 * Test method for
 	 * {@link com.kount.kountaccess.AccessSdk#getInfo(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}
 	 */
-	@Test
-	public void testGetInfoMissingUniqForTrusted() {
-		try {
-			// class to test
-			AccessSdk sdk = spy(new AccessSdk(host, merchantId, apiKey));
-			// mock objects
-			CloseableHttpClient mockHttpClient = mock(CloseableHttpClient.class);
-			HttpPost mockPost = mock(HttpPost.class);
-			// mock responses
-			doReturn(mockHttpClient).when(sdk).getHttpClient();
-			doReturn(mockPost).when(sdk).getHttpPost(accessUrl);
+//	@Test
+//	public void testGetInfoMissingUniqForTrusted() {
+//		try {
+//			// class to test
+//			AccessSdk sdk = spy(new AccessSdk(host, merchantId, apiKey));
+//			// mock objects
+//			CloseableHttpClient mockHttpClient = mock(CloseableHttpClient.class);
+//			HttpPost mockPost = mock(HttpPost.class);
+//			// mock responses
+//			doReturn(mockHttpClient).when(sdk).getHttpClient();
+//			doReturn(mockPost).when(sdk).getHttpPost(accessUrl);
+//
+//			int infoFlag = new InfoEndpointDataSet().withTrustedDevice().build();
+//			// test method
+//			sdk.getInfo(infoFlag, session, null, null, null);
+//			fail("Exception Not thrown");
+//		} catch (AccessException ae) {
+//			assertEquals(AccessErrorType.INVALID_DATA, ae.getAccessErrorType());
+//		}
+//	}
 
-			int infoFlag = new InfoEndpointDataSet().withTrustedDevice().build();
-			// test method
-			sdk.getInfo(infoFlag, session, null, null, null);
-			fail("Exception Not thrown");
-		} catch (AccessException ae) {
-			assertEquals(AccessErrorType.INVALID_DATA, ae.getAccessErrorType());
-		}
-	}
+
 
 	/**
 	 * Test IllegalArgumentException for blank uniq for trusted device info Test
 	 * method for
 	 * {@link com.kount.kountaccess.AccessSdk#getInfo(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}
 	 */
-	@Test
-	public void testGetInfoBlankUniqForTrusted() {
-		try {
-			// class to test
-			AccessSdk sdk = spy(new AccessSdk(host, merchantId, apiKey));
-			// mock objects
-			CloseableHttpClient mockHttpClient = mock(CloseableHttpClient.class);
-			HttpPost mockPost = mock(HttpPost.class);
-			// mock responses
-			doReturn(mockHttpClient).when(sdk).getHttpClient();
-			doReturn(mockPost).when(sdk).getHttpPost(accessUrl);
-
-			int infoFlag = new InfoEndpointDataSet().withTrustedDevice().build();
-			// test method
-			sdk.getInfo(infoFlag, session, "", null, null);
-			fail("Exception Not thrown");
-		} catch (AccessException ae) {
-			assertEquals(AccessErrorType.INVALID_DATA, ae.getAccessErrorType());
-		}
-	}
+//	@Test
+//	public void testGetInfoBlankUniqForTrusted() {
+//		try {
+//			// class to test
+//			AccessSdk sdk = spy(new AccessSdk(host, merchantId, apiKey));
+//			// mock objects
+//			CloseableHttpClient mockHttpClient = mock(CloseableHttpClient.class);
+//			HttpPost mockPost = mock(HttpPost.class);
+//			// mock responses
+//			doReturn(mockHttpClient).when(sdk).getHttpClient();
+//			doReturn(mockPost).when(sdk).getHttpPost(accessUrl);
+//
+//			int infoFlag = new InfoEndpointDataSet().withTrustedDevice().build();
+//			// test method
+//			sdk.getInfo(infoFlag, session, "", null, null);
+//			fail("Exception Not thrown");
+//		} catch (AccessException ae) {
+//			assertEquals(AccessErrorType.INVALID_DATA, ae.getAccessErrorType());
+//		}
+//	}
 
 	/**
 	 * Test IllegalArgumentException with space for uniq for trusted device info
 	 * Test method for
 	 * {@link com.kount.kountaccess.AccessSdk#getInfo(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}
 	 */
-	@Test
-	public void testGetInfoSpaceForUniqForTrusted() {
-		try {
-			// class to test
-			AccessSdk sdk = spy(new AccessSdk(host, merchantId, apiKey));
-			// mock objects
-			CloseableHttpClient mockHttpClient = mock(CloseableHttpClient.class);
-			HttpPost mockPost = mock(HttpPost.class);
-			// mock responses
-			doReturn(mockHttpClient).when(sdk).getHttpClient();
-			doReturn(mockPost).when(sdk).getHttpPost(accessUrl);
-
-			int infoFlag = new InfoEndpointDataSet().withTrustedDevice().build();
-			// test method
-			sdk.getInfo(infoFlag, session, " ", null, null);
-			fail("Exception Not thrown");
-		} catch (AccessException ae) {
-			assertEquals(AccessErrorType.INVALID_DATA, ae.getAccessErrorType());
-		}
-	}
+//	@Test
+//	public void testGetInfoSpaceForUniqForTrusted() {
+//		try {
+//			// class to test
+//			AccessSdk sdk = spy(new AccessSdk(host, merchantId, apiKey));
+//			// mock objects
+//			CloseableHttpClient mockHttpClient = mock(CloseableHttpClient.class);
+//			HttpPost mockPost = mock(HttpPost.class);
+//			// mock responses
+//			doReturn(mockHttpClient).when(sdk).getHttpClient();
+//			doReturn(mockPost).when(sdk).getHttpPost(accessUrl);
+//
+//			int infoFlag = new InfoEndpointDataSet().withTrustedDevice().build();
+//			// test method
+//			sdk.getInfo(infoFlag, session, " ", null, null);
+//			fail("Exception Not thrown");
+//		} catch (AccessException ae) {
+//			assertEquals(AccessErrorType.INVALID_DATA, ae.getAccessErrorType());
+//		}
+//	}
 
 	/**
 	 * Test IllegalArgumentException for missing session for behavioSec info
